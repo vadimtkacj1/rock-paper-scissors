@@ -30,16 +30,15 @@ class RockPaperScissorsManager {
     this.#eventRestart();
   }
 
-  startGame(elem) {
+  async startGame(elem) {
     this.#addEvents(elem);
 
-    preloader().finally(() => {
-      this.#preloaderElement.style.opacity = "0";
+    await preloader();
 
-      setTimeout(() => {
-        this.#preloaderElement.remove();
-      }, 800);
-    });
+    this.#preloaderElement.style.opacity = "0";
+
+    await new Promise((resolve) => setTimeout(resolve, 800));
+    this.#preloaderElement.remove();
   }
 
   #eventRestart() {

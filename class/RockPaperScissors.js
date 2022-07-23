@@ -102,13 +102,11 @@ class RockPaperScissors {
 
     if (playerOneIcon === playerTwoMainIcon) {
       this.#computerCountWin += 1;
-
       return ["Ты проиграл!", "losingStr"];
     }
 
     if (playerOneMainIcon === playerTwoIcon) {
       this.#playerCountWin += 1;
-
       return ["Ты победил!", "winStr"];
     }
   }
